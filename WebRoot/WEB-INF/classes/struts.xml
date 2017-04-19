@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<!--开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!--默认utf-8编码 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<!--关闭缓存静态内容 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<constant name="struts.action.extension" value="action" />
+	<!--支持动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!--不使用struts标签控制表单样式 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<package name="my" extends="struts-default">
+		<!-- 定义登陆拦截器 -->
+		<interceptors>
+			<interceptor name="loginInterceptor"
+				class="com.bs.mall.interceptor.LoginInterceptor" />
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="loginInterceptor" />
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+
+		<global-results>
+			<result name="login" type="redirect">/login.jsp</result>
+		</global-results>
+		<!-- 登陆登出 -->
+		<action name="loginAction" class="com.bs.mall.action.LoginAction"
+			method="{*}">			
+			<result name="success">/index.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="outAction" class="com.bs.mall.action.LoginAction"
+			method="{*}">			
+			<result name="login">/login.jsp</result>
+			<interceptor-ref name="mydefault"></interceptor-ref>
+		</action>
+		<action name="commAction" class="com.bs.mall.action.CommodityAction" method="{*}">
+			<result name="success">/comm_info.jsp</result>
+			<result name="err">/comm_add.jsp</result>
+			<interceptor-ref name="mydefault"></interceptor-ref>
+		</action>
+		<action name="vipAction" class="com.bs.mall.action.VipAction" method="{*}">
+			<result name="success">/vip_add.jsp</result>
+			<interceptor-ref name="mydefault"></interceptor-ref>
+		</action>
+		<action name="consAction" class="com.bs.mall.action.ConsAction" method="{*}">
+			<result name="success">/shopping.jsp</result>
+			<result name="vipInfo">/vip_info.jsp</result>
+			<interceptor-ref name="mydefault"></interceptor-ref>
+		</action>
+		<action name="sysMangAction" class="com.bs.mall.action.LoginAction" method="userList">
+			<result name="success">/system_manager.jsp</result>
+			<interceptor-ref name="mydefault"></interceptor-ref>
+		</action>
+		<action name="syseditAction" class="com.bs.mall.action.LoginAction" method="editUser">
+			<result name="success">/user_edit.jsp</result>
+			<interceptor-ref name="mydefault"></interceptor-ref>
+		</action>
+		<action name="saveEditAction" class="com.bs.mall.action.LoginAction" method="save">
+			<result name="success">/system_manager.jsp</result>
+			<interceptor-ref name="mydefault"></interceptor-ref>
+		</action>
+		
+		
+	</package>
+
+</struts>    

@@ -1,0 +1,162 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#top{
+
+    background-color: #404040;
+    width: 100%;
+    height: 50px;
+}
+
+#topleft{
+	vertical-align: top;
+	width: 57%;
+	height:50px;
+	line-height:50px;
+	float: left;
+	color:white;
+	text-align: right;
+}
+#topright{
+	vertical-align: top;
+	width:43%;
+	height:50px;
+	line-height:50px;
+	float:left;
+	color:white;
+	text-align: right;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+}
+
+#left{
+    vertical-align: top;
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: cornsilk;
+}
+
+#right{
+    vertical-align: top;
+    float: left;
+    width: 80%;
+    height: 100%;
+    background-color:ivory;
+}
+
+.menu{
+	text-align:center;
+	width:100%;
+	height:50px;	
+	line-height: 50px;
+	cursor: pointer;
+	color:blue;
+}
+
+.mainform{
+	margin:50px auto;
+	width: 70%;
+	height:70%;
+	text-align: center;
+}
+
+.addInput{
+	width: 60%;
+	height: 35px;
+	font-size: 16px;
+}
+
+.mesLab{
+	width: 60%;
+	height: 35px;
+	font-size: 16px;
+	color: blue;
+}
+
+#addBtnDiv{
+	margin:auto;
+	width: 72%;
+	text-align: right;
+}
+.addBtn{
+	height: 30px;
+    width: 100px;
+    background-color: dodgerblue;
+    border:0px;
+    color: white;
+    font-size: 16px;
+}
+
+#vipDiv{
+	height: 40px;
+	width: 30%;
+	background-color: #0090D7;
+	color:white;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+#commDiv{
+	height:40px;
+	width:70%;
+	background-color: #FF8000;
+	color:white;
+	float:left;
+	line-height: 40px;
+	text-align: center;
+}
+#chVipDiv{
+	width: 30%;
+	float: left;
+	text-align: center;
+}
+#chCommDiv{
+	width:70%;
+	float:left;
+	text-align: center;
+}
+
+#addsubDiv{
+	width: 100%;
+	text-align: right;
+}
+
+.shopSelect{
+	margin: 50px;
+	width: 70%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+}
+
+#shopBtn{
+	height: 30px;
+    width: 80px;
+    background-color: dodgerblue;
+    color: white;
+    border:0px;
+    font-size: 16px;
+}
+
+#helpDiv{
+	height: 90%;
+	width: 90%;
+	margin: auto;
+	font-size: 18px;
+}
+
+
+
+
+
